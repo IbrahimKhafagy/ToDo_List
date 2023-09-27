@@ -106,14 +106,11 @@ class TodolistController extends Controller
 {
     $taskId = $request->input('taskId');
     $completed = $request->input('completed');
-
-    
-    // قم بتحديث قيمة "completed" في قاعدة البيانات للمهمة المُحددة باستخدام $taskId
-
-    // قم بإرجاع الاستجابة المناسبة
+    if($completed){
     return response()->json([
         'success' => 'Task completed status updated successfully.',
         'code' => 200
     ]);
+    }
 }
 }
